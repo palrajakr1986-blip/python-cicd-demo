@@ -3,7 +3,7 @@ name: Python CI Pipeline
 # Trigger workflow on pushes to master
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
 
 jobs:
   run-python:
