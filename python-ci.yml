@@ -1,0 +1,25 @@
+name: Python CI Pipeline
+
+# Trigger workflow only on pushes to master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repo code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Python 3.13
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      # Step 3: Run your Python program
+      - name: Run Python program
+        run: python add.py
